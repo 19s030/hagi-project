@@ -2,7 +2,7 @@ from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage, ImageSendMessage, ImageMessage, FlexSendMessage,CarouselContainer,BubbleContainer
-from image_change import mosic_change, art_change, dot_change, illust_change, hair_change
+from image_change import mosic_change, art_change, dot_change, illust_change, hair_change, skin_change
 import main
 import shutil
 import json
