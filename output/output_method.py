@@ -84,7 +84,7 @@ def handle_send_message4(event,reply,userid):
 
 # # 髪の毛変更test
 def handle_send_message5(event,reply,userid):
-    result = hair_change.hair_image(event,userid)
+    result = skin_change.skin_image(event,userid)
     reply = str(reply)
     print("通過チェック画像：{}".format(main.FQDN + "/static/" + userid + "/" + event + "_face.jpg"))
     message = []
