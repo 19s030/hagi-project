@@ -123,7 +123,7 @@ def carousel(event):
     text_save_reply(reply_work)
 
     # Json展開
-    json_open = open('carousel.json', 'r')
+    json_open = open('color.json', 'r')
     json_data = json.load(json_open)
 
     message.append(TextSendMessage(text = "メニューを選択してね"))
