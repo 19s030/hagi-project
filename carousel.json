@@ -8,7 +8,7 @@
         "size": "full",
         "aspectRatio": "20:13",
         "aspectMode": "cover",
-        "url": "https://sinrigakulab.com/wp-content/uploads/%E5%A4%A2%E5%8D%A0%E3%81%84-%E3%83%86%E3%82%B9%E3%83%88-1024x776.jpg"
+        "url": "https://secret-lake-56663.herokuapp.com/static/hair_color_change.jpg"
       },
       "footer": {
         "type": "box",
@@ -17,7 +17,7 @@
         "contents": [
           {
             "type": "text",
-            "text": "test",
+            "text": "髪色変更",
             "wrap": true,
             "align": "center",
             "position": "relative",
@@ -29,7 +29,7 @@
             "action": {
               "type": "message",
               "label": "変更",
-              "text": ">>test"
+              "text": ">>髪色変更"
             },
             "position": "relative"
           }
@@ -135,6 +135,41 @@
               "type": "message",
               "label": "変更",
               "text": ">>イラスト風"
+            },
+            "position": "relative"
+          }
+        ]
+      } 
+    },
+    {
+         "type": "bubble",
+      "hero": {
+        "type": "image",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover",
+        "url": "https://secret-lake-56663.herokuapp.com/static/skin_color_change.jpg"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "肌色変更",
+            "wrap": true,
+            "align": "center",
+            "position": "relative",
+            "size": "md"
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "action": {
+              "type": "message",
+              "label": "変更",
+              "text": ">>肌色変更"
             },
             "position": "relative"
           }
