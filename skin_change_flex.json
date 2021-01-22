@@ -1,0 +1,107 @@
+{
+ "type": "bubble",
+ "hero": {
+ "type": "image",
+ "url": "https://secret-lake-56663.herokuapp.com/static/skin_color.jpg",
+ "size": "full",
+ "aspectRatio": "20:13",
+ "aspectMode": "cover",
+ "action": {
+ "type": "uri",
+ "uri": "http://linecorp.com/"
+ },
+ "flex": 0
+ },
+ "body": {
+ "type": "box",
+ "layout": "vertical",
+ "contents": [
+ {
+ "type": "text",
+ "text": "肌色変更",
+ "weight": "bold",
+ "size": "xl",
+ "flex": 1
+ }
+ ],
+ "flex": 0
+ },
+ "footer": {
+ "type": "box",
+ "layout": "vertical",
+ "spacing": "sm",
+ "contents": [
+ {
+ "type": "button",
+ "style": "link",
+ "height": "sm",
+ "action": {
+ "type": "message",
+ "label": "緑色変更",
+ "text": ">>緑色変更"
+ },
+ "flex": 5
+ },
+ {
+ "type": "button",
+ "style": "link",
+ "height": "sm",
+ "action": {
+ "type": "message",
+ "label": "青色変更",
+ "text": ">>青色変更"
+ },
+ "flex": 5
+ },
+ {
+ "type": "button",
+ "style": "link",
+ "height": "sm",
+ "action": {
+ "type": "message",
+ "label": "黄色変更",
+ "text": ">>黄色変更"
+ },
+ "flex": 5
+ },
+ {
+ "type": "button",
+ "style": "link",
+ "height": "sm",
+ "action": {
+ "type": "message",
+ "label": "ピンク変更",
+ "text": ">>ピンク変更"
+ },
+ "flex": 5
+ },
+ {
+ "type": "button",
+ "style": "link",
+ "height": "sm",
+ "action": {
+ "type": "message",
+ "label": "赤色変更",
+ "text": ">>赤色変更"
+ },
+ "flex": 5
+ },
+ {
+ "type": "button",
+ "style": "link",
+ "height": "sm",
+ "action": {
+ "type": "message",
+ "label": "黒色変更",
+ "text": ">>黒色変更"
+ },
+ "flex": 5
+ },
+ {
+ "type": "spacer",
+ "size": "sm"
+ }
+ ],
+ "flex": 0
+ }
+}

@@ -9,27 +9,62 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import path_data
+import random
 
-def skin_image(event,userid):
+
+def skin_image(event,userid,color):
     image_path, output_path = path_data.get_image_path(event,userid)
-  
- 
-    image = cv2.imread(image_path)     # Load image
- 
-   
- 
-    HSV_MIN = np.array([0, 30, 30])
-    HSV_MAX = np.array([30, 150, 255])
  
  
-    height = image.shape[0]
-    width = image.shape[1]
-    img2 = cv2.resize(image , (int(width*0.5), int(height*0.5)))
-    hsv = cv2.cvtColor(img2, cv2.COLOR_BGR2HSV) # BGR->HSV変換
+    image = cv2.imread(image_path) # Load image
+
+    hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV) # BGR->HSV変換
     hsv_2 = np.copy(hsv)
-    hsv_2[:, :, 0] = np.where((hsv[:, :, 0]>4) & (hsv[:, :, 0]<30) ,hsv[:, :,(2)]*0.3,hsv[:, :, 0])
-    bgr = cv2.cvtColor(hsv_2, cv2.COLOR_HSV2BGR)
-    
- 
-    bgr = cv2.cvtColor(hsv_2, cv2.COLOR_HSV2BGR)
+
+    #a = random.randint(1,6)
+
+    if color == 1:
+        hsv_2[:, :, 0] = np.where((hsv[:, :, 0]>6) & (hsv[:, :, 0]<30) ,hsv[:, :, 0] *0.001,hsv[:, :, 0]) #赤に変更
+        hsv_3 = np.copy(hsv_2)
+        hsv_3[:, :, 0] = np.where((hsv_2[:, :, 0]>= 0) & (hsv_2[:, :, 0]<10) ,hsv_2[:, :, 0] + 60,hsv_2[:, :, 0]) #緑
+        bgr = cv2.cvtColor(hsv_3, cv2.COLOR_HSV2BGR)
+    elif color == 2:
+        hsv_2[:, :, 0] = np.where((hsv[:, :, 0]>6) & (hsv[:, :, 0]<30) ,hsv[:, :, 0] *0.001,hsv[:, :, 0]) #赤に変更
+        hsv_3 = np.copy(hsv_2)
+        hsv_3[:, :, 0] = np.where((hsv_2[:, :, 0]>= 0) & (hsv_2[:, :, 0]<10) ,hsv_2[:, :, 0] + 110,hsv_2[:, :, 0]) #青
+        bgr = cv2.cvtColor(hsv_3, cv2.COLOR_HSV2BGR)
+    elif color == 3:
+        hsv_2[:, :, 0] = np.where((hsv[:, :, 0]>6) & (hsv[:, :, 0]<30) ,hsv[:, :, 0] *0.001,hsv[:, :, 0]) #赤に変更
+        hsv_3 = np.copy(hsv_2)
+        hsv_3[:, :, 0] = np.where((hsv_2[:, :, 0]>= 0) & (hsv_2[:, :, 0]<10) ,hsv_2[:, :, 0] + 25,hsv_2[:, :, 0]) #黄色
+        bgr = cv2.cvtColor(hsv_3, cv2.COLOR_HSV2BGR)
+    elif color == 4:
+        hsv_2[:, :, 0] = np.where((hsv[:, :, 0]>6) & (hsv[:, :, 0]<30) ,hsv[:, :, 0] + 160,hsv[:, :, 0]) #ピンク
+        hsv_3 = np.copy(hsv_2)
+        hsv_3[:, :, 1] = np.where((hsv_2[:, :, 0]>140) & (hsv_2[:, :, 0]<180) ,hsv[:, :, 1] *0.8,hsv[:, :, 1]) #ピンク       
+        bgr = cv2.cvtColor(hsv_3, cv2.COLOR_HSV2BGR)
+    elif color == 5:
+        hsv_2[:, :, 0] = np.where((hsv[:, :, 0]>6) & (hsv[:, :, 0]<30) ,hsv[:, :, 0] *0.001,hsv[:, :, 0]) #赤色
+        bgr = cv2.cvtColor(hsv_2, cv2.COLOR_HSV2BGR)
+    elif color == 6:
+        # hsv_2[:, :, 0] = np.where((hsv[:, :, 2]>=0) & (hsv[:, :, 2]<150) ,hsv[:, :, 0] *0.001,hsv[:, :, 0]) #黒色
+        # hsv_3 = np.copy(hsv_2)
+        # hsv_3[:, :, 2] = np.where((hsv_2[:, :, 2]>=0) & (hsv_2[:, :, 2]<150) ,hsv_2[:, :, 2] *0.001,hsv_2[:, :, 2]) #黒色
+        # hsv_4 = np.copy(hsv_3)
+        # hsv_4[:, :, 2] = np.where((hsv_3[:, :, 2]>=0) & (hsv_3[:, :, 2]<5) ,hsv_3[:, :, 2] +253,hsv_3[:, :, 2]) #黒色
+        # #hsv_4[:, :, 1] = np.where((hsv_3[:, :, 1]>=0) & (hsv_3[:, :, 1]<10) ,hsv_3[:, :, 1] +254,hsv_3[:, :, 1]) #黒色
+        
+        # hsv_2[:, :, 0] = np.where((hsv[:, :, 0]>6) & (hsv[:, :, 0]<30) ,hsv[:, :, 0] *0.001,hsv[:, :, 0]) #ピンク
+        # hsv_3 = np.copy(hsv_2)
+        # hsv_3[:, :, 0] = np.where((hsv_2[:, :, 0]>= 0) & (hsv_2[:, :, 0]<5) ,hsv_2[:, :, 0] +18,hsv_2[:, :, 0]) #ピンク
+        # hsv_4 = np.copy(hsv_3)
+        hsv_2[:, :, 2] = np.where((hsv[:, :, 0]>= 6) & (hsv[:, :, 0]<30) ,hsv[:, :, 2] *0.4,hsv[:, :, 2]) #黒色
+        bgr = cv2.cvtColor(hsv_2, cv2.COLOR_HSV2BGR)
+        
+    #hsv_2[:, :, 2] = np.where((hsv_2[:, :, 0]>6) & (hsv_2[:, :, 0]<30) ,hsv_2[:, :, 1] *0.7,hsv_2[:, :, 2]) #黒色
+    #0.001 赤
+    #0.3 緑
+
+
+    #bgr = cv2.cvtColor(hsv_3, cv2.COLOR_HSV2BGR)
     cv2.imwrite(output_path, bgr)

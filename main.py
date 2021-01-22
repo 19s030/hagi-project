@@ -16,6 +16,7 @@ path_w1 = 'saveid.txt'
 path_w2 = 'savereply.txt'
 app = Flask(__name__)
 
+
 # トークン情報もろもろ
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ['YOUR_CHANNEL_ACCESS_TOKEN']
 YOUR_CHANNEL_SECRET = os.environ['YOUR_CHANNEL_SECRET']
@@ -40,7 +41,6 @@ def callback():
         abort(400)
     return "OK"
 
-# テキストデータを受け取ったときに走るやつ。
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     print("取得イヴェント:{}".format(event))
@@ -53,6 +53,7 @@ def handle_message(event):
     print("ユーザーID：{}".format(profile.user_id))
 
     userId = profile.user_id
+
 
 
     #モザイク(目)
@@ -92,7 +93,7 @@ def handle_message(event):
         output_method.handle_send_message4(work,event.reply_token,userId)
     
     #髪の毛test
-    elif event.message.text == ">>test" and os.path.exists("static/" + userId):
+    elif event.message.text == ">>髪色変更" and os.path.exists("static/" + userId):
         print("通過: {}".format(event.message.text))
         with open(path_w1) as f:
             work = f.read()
@@ -100,12 +101,109 @@ def handle_message(event):
             work1 = f2.read()
         output_method.handle_send_message5(work,event.reply_token,userId)
 
+
+    #肌の色
+    elif event.message.text == ">>肌色変更" and os.path.exists("static/" + userId):
+        print("通過: {}".format(event.message.text))
+        # with open(path_w1) as f:
+        #     work = f.read()
+        # with open(path_w2) as f2:
+        #     work1 = f2.read()
+        #output_method.handle_send_message6(work,event.reply_token,userId)
+
+        flex(event)
+
+
+    elif event.message.text == ">>緑色変更" and os.path.exists("static/" + userId):
+        print("「緑」通過: {}".format(event.message.text))
+
+        color = 1
+        with open(path_w1) as f:
+            work = f.read()
+        with open(path_w2) as f2:
+            work1 = f2.read()
+        output_method.handle_send_message6(work,event.reply_token,userId,color)
+
+    elif event.message.text == ">>青色変更" and os.path.exists("static/" + userId):
+        print("通過: {}".format(event.message.text))
+
+        color = 2
+        with open(path_w1) as f:
+            work = f.read()
+        with open(path_w2) as f2:
+            work1 = f2.read()
+        output_method.handle_send_message6(work,event.reply_token,userId,color)
+
+    elif event.message.text == ">>黄色変更" and os.path.exists("static/" + userId):
+        print("通過: {}".format(event.message.text))
+
+        color = 3
+        with open(path_w1) as f:
+            work = f.read()
+        with open(path_w2) as f2:
+            work1 = f2.read()
+        output_method.handle_send_message6(work,event.reply_token,userId,color)
+
+    elif event.message.text == ">>ピンク変更" and os.path.exists("static/" + userId):
+        print("通過: {}".format(event.message.text))
+
+        color = 4
+        with open(path_w1) as f:
+            work = f.read()
+        with open(path_w2) as f2:
+            work1 = f2.read()
+        output_method.handle_send_message6(work,event.reply_token,userId,color)
+
+
+    elif event.message.text == ">>赤色変更" and os.path.exists("static/" + userId):
+        print("通過: {}".format(event.message.text))
+
+        color = 5
+        with open(path_w1) as f:
+            work = f.read()
+        with open(path_w2) as f2:
+            work1 = f2.read()
+        output_method.handle_send_message6(work,event.reply_token,userId,color)
+
+    elif event.message.text == ">>黒色変更" and os.path.exists("static/" + userId):
+        print("通過: {}".format(event.message.text))
+
+        color = 6
+        with open(path_w1) as f:
+            work = f.read()
+        with open(path_w2) as f2:
+            work1 = f2.read()
+        output_method.handle_send_message6(work,event.reply_token,userId,color)
+
+def flex(event):
+    message = []
+    #work = event.message.id
+    #reply_work = event.reply_token
+    #print("取得イヴェントメッセージIDDDDDDDDDDDDDDDD:{}".format(work))
+    #text_save_id(work)
+    #text_save_reply(reply_work)
+    json_open = open("skin_change_flex.json", 'r')
+    json_data = json.load(json_open)
+    user_id = os.environ["USER_ID"]
+    
+    
+    messages = FlexSendMessage(alt_text="test", contents=json_data)
+    print("フレックスメッセージ中身: {}".format(messages))
+    if event.reply_token == "00000000000000000000000000000000":
+        return
+    if event.reply_token == "ffffffffffffffffffffffffffffffff":
+        return
+    
+    line_bot_api.reply_message(event.reply_token, messages)
+
+
     
 def text_save_id(work):
     s = work
     print("取得イヴェントメッセージIDDDDDDDDDDDDDDDD_text_saveID:{}".format(work))
     with open(path_w1, mode='w') as f:
         f.write(s)
+
 
 def text_save_reply(work):
     s = work
@@ -127,6 +225,29 @@ def carousel(event):
     json_data = json.load(json_open)
 
     message.append(TextSendMessage(text = "メニューを選択してね"))
+    message.append(FlexSendMessage(alt_text="test", contents=json_data))
+
+    if event.reply_token == "00000000000000000000000000000000":
+        return
+    if event.reply_token == "ffffffffffffffffffffffffffffffff":
+        return
+    
+    line_bot_api.reply_message(event.reply_token, message)   
+
+
+def carousel_skin(event):
+    message = []
+    work = event.message.id
+    reply_work = event.reply_token
+    print("取得イヴェントメッセージIDDDDDDDDDDDDDDDD:{}".format(work))
+    text_save_id(work)
+    text_save_reply(reply_work)
+
+    # Json展開
+    json_open = open('carousel_skin.json', 'r')
+    json_data = json.load(json_open)
+
+    message.append(TextSendMessage(text = "変更したい色を選択してね"))
     message.append(FlexSendMessage(alt_text="test", contents=json_data))
 
     if event.reply_token == "00000000000000000000000000000000":

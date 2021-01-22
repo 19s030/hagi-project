@@ -84,7 +84,7 @@ def handle_send_message4(event,reply,userid):
 
 # # 髪の毛変更test
 def handle_send_message5(event,reply,userid):
-    result = skin_change.skin_image(event,userid)
+    result = hair_change.hair_image(event,userid)
     reply = str(reply)
     print("通過チェック画像：{}".format(main.FQDN + "/static/" + userid + "/" + event + "_face.jpg"))
     message = []
@@ -95,4 +95,18 @@ def handle_send_message5(event,reply,userid):
     message.append(TextSendMessage(text = "加工が終了しました。"))
     main.line_bot_api.reply_message(reply,message)
     #shutil.rmtree("static/" + userid)
+
+
+# # 肌の色変更
+def handle_send_message6(event,reply,userid,color):
+    skin_change.skin_image(event,userid,color)
+    reply = str(reply)
+    print("通過チェック画像：{}".format(main.FQDN + "/static/" + userid + "/" + event + "_face.jpg"))
+    message = []
+    message.append(TextSendMessage(text = "画像を加工中です..."))
+    message.append(ImageSendMessage(
+        original_content_url=main.FQDN + "/static/" + userid + "/" + event + "_face.jpg",
+        preview_image_url=main.FQDN + "/static/" + userid + "/" + event + "_face.jpg",))
+    message.append(TextSendMessage(text = "加工が終了しました。"))
+    main.line_bot_api.reply_message(reply,message)
 ################################################################

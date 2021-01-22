@@ -1,0 +1,216 @@
+{
+  "type": "carousel",
+  "contents": [
+    {
+        "type": "bubble",
+      "hero": {
+        "type": "image",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover",
+        "url": "https://sinrigakulab.com/wp-content/uploads/%E5%A4%A2%E5%8D%A0%E3%81%84-%E3%83%86%E3%82%B9%E3%83%88-1024x776.jpg"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "緑色変更",
+            "wrap": true,
+            "align": "center",
+            "position": "relative",
+            "size": "md"
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "action": {
+              "type": "message",
+              "label": "変更",
+              "text": ">>緑色変更"
+            },
+            "position": "relative"
+          }
+        ]
+      }
+    },
+    {
+        "type": "bubble",
+      "hero": {
+        "type": "image",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover",
+        "url": "https://team-hagi-project.herokuapp.com/static/mosic.png"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "青色変更",
+            "wrap": true,
+            "align": "center",
+            "position": "relative",
+            "size": "md"
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "action": {
+              "type": "message",
+              "label": "変更",
+              "text": ">>青色変更"
+            },
+            "position": "relative"
+          }
+        ]
+      }
+    },
+    {
+         "type": "bubble",
+      "hero": {
+        "type": "image",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover",
+        "url": "https://team-hagi-project.herokuapp.com/static/senga.jpg"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "黄色変更",
+            "wrap": true,
+            "align": "center",
+            "position": "relative",
+            "size": "md"
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "action": {
+              "type": "message",
+              "label": "変更",
+              "text": ">>黄色変更"
+            },
+            "position": "relative"
+          }
+        ]
+      }
+    },
+    {
+         "type": "bubble",
+      "hero": {
+        "type": "image",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover",
+        "url": "https://team-hagi-project.herokuapp.com/static/illustration.jpg"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "ピンク変更",
+            "wrap": true,
+            "align": "center",
+            "position": "relative",
+            "size": "md"
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "action": {
+              "type": "message",
+              "label": "変更",
+              "text": ">>ピンク変更"
+            },
+            "position": "relative"
+          }
+        ]
+      } 
+    },
+    {
+         "type": "bubble",
+      "hero": {
+        "type": "image",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover",
+        "url": "https://team-hagi-project.herokuapp.com/static/illustration.jpg"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "赤色変更",
+            "wrap": true,
+            "align": "center",
+            "position": "relative",
+            "size": "md"
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "action": {
+              "type": "message",
+              "label": "変更",
+              "text": ">>赤色変更"
+            },
+            "position": "relative"
+          }
+        ]
+      } 
+    },
+    {
+          "type": "bubble",
+      "hero": {
+        "type": "image",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover",
+        "url": "https://team-hagi-project.herokuapp.com/static/dot.png"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "黒色変更",
+            "wrap": true,
+            "align": "center",
+            "position": "relative",
+            "size": "md"
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "action": {
+              "type": "message",
+              "label": "変更",
+              "text": ">>黒色変更"
+            },
+            "position": "relative"
+          }
+          
+        ]
+      }
+    }
+  ]
+}
