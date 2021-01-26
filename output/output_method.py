@@ -95,7 +95,7 @@ def handle_send_message5(event,reply,userid):
     message.append(TextSendMessage(text = "加工が終了しました。"))
     main.line_bot_api.reply_message(reply,message)
     #shutil.rmtree("static/" + userid)
-
+################################################################
 
 # # 肌の色変更
 def handle_send_message6(event,reply,userid,color):
@@ -110,3 +110,4 @@ def handle_send_message6(event,reply,userid,color):
     message.append(TextSendMessage(text = "加工が終了しました。"))
     main.line_bot_api.reply_message(reply,message)
 ################################################################
+
