@@ -184,7 +184,7 @@ def flex(event):
     #text_save_reply(reply_work)
     json_open = open("skin_change_flex.json", 'r')
     json_data = json.load(json_open)
-    user_id = os.environ["USER_ID"]
+    #user_id = os.environ["USER_ID"]
     
     
     messages = FlexSendMessage(alt_text="test", contents=json_data)
