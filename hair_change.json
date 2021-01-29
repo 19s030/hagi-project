@@ -2,7 +2,7 @@
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://team-hagi-project.herokuapp.com/static/hair_color_change.jpg",
+    "url": "https://team-hagi-project.herokuapp.com/static/hair_color.jpg",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
