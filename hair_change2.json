@@ -2,7 +2,7 @@
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+    "url": "https://team-hagi-project.herokuapp.com/static/hair_color_change.jpg",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
@@ -18,7 +18,7 @@
     "contents": [
       {
         "type": "text",
-        "text": "ヘアーカラー",
+        "text": "ヘアーカラー選択",
         "weight": "bold",
         "size": "xl",
         "flex": 1
