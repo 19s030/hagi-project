@@ -357,7 +357,7 @@ def flex_black(event):
     print("取得イヴェントメッセージIDDDDDDDDDDDDDDDD:{}".format(work))
     json_open = open('hair_change.json', 'r')
     json_data = json.load(json_open)
-    user_id = os.environ["USER_ID"]
+    #user_id = os.environ["USER_ID"]
 
     messages = FlexSendMessage(alt_text="test", contents=json_data)
     print("フレックスメッセージ中身: {}".format(messages))
@@ -374,7 +374,7 @@ def flex_cha(event):
     print("取得イヴェントメッセージIDDDDDDDDDDDDDDDD:{}".format(work))
     json_open = open('hair_change2.json', 'r')
     json_data = json.load(json_open)
-    user_id = os.environ["USER_ID"]
+    #user_id = os.environ["USER_ID"]
 
     messages = FlexSendMessage(alt_text="test", contents=json_data)
     print("フレックスメッセージ中身: {}".format(messages))
