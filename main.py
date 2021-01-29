@@ -333,6 +333,59 @@ def flex(event):
     line_bot_api.reply_message(event.reply_token, messages)
 
 
+def flex2(event):
+    messages = []
+    work = event.message.id
+    reply_work = event.reply_token
+    print("取得イヴェントメッセージIDDDDDDDDDDDDDDDD:{}".format(work))
+    json_open = open('hair_change_myself.json', 'r')
+    json_data = json.load(json_open)
+    user_id = os.environ["USER_ID"]
+    
+    messages = FlexSendMessage(alt_text="test", contents=json_data)
+    print("フレックスメッセージ中身: {}".format(messages))
+    if event.reply_token == "00000000000000000000000000000000":
+        return
+    if event.reply_token == "ffffffffffffffffffffffffffffffff":
+        return
+    
+    line_bot_api.reply_message(event.reply_token, messages)
+
+
+def flex_black(event):
+    messages = []
+    print("取得イヴェントメッセージIDDDDDDDDDDDDDDDD:{}".format(work))
+    json_open = open('hair_change.json', 'r')
+    json_data = json.load(json_open)
+    user_id = os.environ["USER_ID"]
+
+    messages = FlexSendMessage(alt_text="test", contents=json_data)
+    print("フレックスメッセージ中身: {}".format(messages))
+    if event.reply_token == "00000000000000000000000000000000":
+        return
+    if event.reply_token == "ffffffffffffffffffffffffffffffff":
+        return
+    
+    line_bot_api.reply_message(event.reply_token, messages)
+
+
+def flex_cha(event):
+    messages = []
+    print("取得イヴェントメッセージIDDDDDDDDDDDDDDDD:{}".format(work))
+    json_open = open('hair_change2.json', 'r')
+    json_data = json.load(json_open)
+    user_id = os.environ["USER_ID"]
+
+    messages = FlexSendMessage(alt_text="test", contents=json_data)
+    print("フレックスメッセージ中身: {}".format(messages))
+    if event.reply_token == "00000000000000000000000000000000":
+        return
+    if event.reply_token == "ffffffffffffffffffffffffffffffff":
+        return
+    
+    line_bot_api.reply_message(event.reply_token, messages)
+
+
     
 def text_save_id(work):
     s = work
